@@ -40,20 +40,28 @@
 
   <!-- SECTION -->
   <main class="container-fluid">
-    <section class="row">
-      <div id="backImage" class="text-light">
+    <section class="row d-flex">
+      <div class="col-3 flex-end toDoCard ps-5 ms-5" id="backImage" class="text-light">
+        <div>
+          <form onsubmit="app.ToDoController.createToDo(event)">
+            <p id="number"></p>
+            <input id="add" type="text" name="description" required maxlength="20">
+            <button>+</button>
+          </form>
+        </div>
+      </div>
 
+      <div class="col-3 d-flex text-light toDoCard ms-3" id="toDoTemplate">
+        <!-- <button class="mdi mdi-arrow-down"></button> -->
+        <!-- <i onclick="app.ToDoController.removeToDo('${this.id}')" role="button" class="mdi mdi-delete-circle"></i> -->
+        <p>${this.description}</p>
+      </div>
+
+      <div class="col-9">
+        <p>${this.quote}</p>
+        <p>${this.author}</p>
       </div>
     </section>
-    <section class="row">
-      <form onsubmit="app.ToDoController.createNote(event)">
-
-      </form>
-    </section>
-
-
-
-
   </main>
 
   <!-- SECTION -->

@@ -1,6 +1,7 @@
 import { AboutController } from "./controllers/AboutController.js";
 
 import { ImageController } from "./controllers/ImageController.js";
+import { ToDoController } from "./controllers/ToDoController.js";
 import { ValuesController } from "./controllers/ValuesController.js";
 import { AboutView } from "./views/AboutView.js";
 
@@ -11,7 +12,7 @@ import { AboutView } from "./views/AboutView.js";
 export const router = [
   {
     path: '',
-    controller: ImageController,
+    controller: [ImageController, ToDoController],
     view: ''
   },
   {

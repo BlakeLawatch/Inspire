@@ -8,7 +8,6 @@ class ImageService {
     async getImage() {
         const res = await api.get('api/images')
         AppState.image = new Image(res.data)
-        console.log(AppState.image);
 
     }
 

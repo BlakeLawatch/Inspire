@@ -18,6 +18,14 @@ class ObservableAppState extends EventEmitter {
   /** @type {import('./models/Image.js').Image | null} */
   image = null
 
+  // @ts-ignore
+  /** @type {import('./models/ToDo.js').ToDo[]} */
+  toDo = []
+
+  // @ts-ignore
+  /** @type {import('./models/ActiveQuote.js').ActiveQuote | null} */
+  activeQuote = null
+
   // Used to load initial data
   init() {
 
