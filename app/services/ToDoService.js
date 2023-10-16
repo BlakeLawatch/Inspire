@@ -25,6 +25,8 @@ class ToDoService {
     async getMyToDos() {
         const res = await api.get('api/todos')
         AppState.toDo = res.data.map(pojo => new ToDo(pojo))
+
+
     }
 
     // TODO fix the 404
@@ -32,7 +34,7 @@ class ToDoService {
     async removeToDo(noteId) {
         try {
             const res = await api.delete(`api/todos/${noteId}`)
-            console.log(res.data, 'delete service wont work');
+            // console.log(res.data, 'delete service wont work');
             const id = AppState.toDo
             const idIndex = id.findIndex(note => note.id == noteId)
 

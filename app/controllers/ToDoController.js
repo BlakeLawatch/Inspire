@@ -18,6 +18,8 @@ function _drawMyToDos() {
 
 export class ToDoController {
     constructor() {
+
+
         AppState.on('toDo', _drawMyToDos)
         AppState.on('account', this.getMyToDos)
 
@@ -57,4 +59,6 @@ export class ToDoController {
 
         }
     }
+
+
 }

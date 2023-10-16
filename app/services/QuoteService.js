@@ -8,9 +8,11 @@ class QuoteService {
 
 
     async getQuote() {
-        const res = await api.get('activeQuote')
+        const res = await api.get('api/quotes')
+        // console.log(res.data, 'quote service working');
         AppState.activeQuote = new Quote(res.data)
-        console.log(AppState.activeQuote, 'quote service working');
+        AppState.emit('activeQuote')
+
     }
 }
 

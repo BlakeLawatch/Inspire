@@ -1,8 +1,9 @@
 import { AboutController } from "./controllers/AboutController.js";
-
 import { ImageController } from "./controllers/ImageController.js";
+import { QuoteController } from "./controllers/QuoteController.js";
 import { ToDoController } from "./controllers/ToDoController.js";
 import { ValuesController } from "./controllers/ValuesController.js";
+import { WeatherController } from "./controllers/WeatherController.js";
 import { AboutView } from "./views/AboutView.js";
 
 /**
@@ -12,7 +13,7 @@ import { AboutView } from "./views/AboutView.js";
 export const router = [
   {
     path: '',
-    controller: [ImageController, ToDoController],
+    controller: [ImageController, QuoteController, ToDoController, WeatherController],
     view: ''
   },
   {

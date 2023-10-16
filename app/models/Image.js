@@ -3,10 +3,10 @@ export class Image {
         this.imgUrl = data.imgUrl
     }
 
-    get imageTemplate() {
-        return `
-        <img src="${this.imgUrl}" alt="">`
-    }
+    // get imageTemplate() {
+    //     return `
+    //     <img src="${this.imgUrl}" alt="">`
+    // }
 }
 
 

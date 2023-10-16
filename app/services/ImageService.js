@@ -9,6 +9,7 @@ class ImageService {
         const res = await api.get('api/images')
         AppState.image = new Image(res.data)
 
+
     }
 
 }

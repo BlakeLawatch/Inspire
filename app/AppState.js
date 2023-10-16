@@ -23,8 +23,16 @@ class ObservableAppState extends EventEmitter {
   toDo = []
 
   // @ts-ignore
-  /** @type {import('./models/ActiveQuote.js').ActiveQuote | null} */
+  /** @type {import('./models/Quote.js').Quote | null} */
   activeQuote = null
+
+  // @ts-ignore
+  /** @type {import('./models/Weather.js').Weather | null} */
+  weather = null
+
+  // @ts-ignore
+  /** @type {import('./models/Time.js').Time | ''} */
+  time = ''
 
   // Used to load initial data
   init() {

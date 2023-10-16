@@ -11,3 +11,19 @@ body {
     border-radius: 10px;
     padding: .5em;
 }
+
+
+.quoteBody {
+    opacity: 0;
+    visibility: hidden;
+    /* transition: ease-in-out .75s; */
+}
+
+.quoteAuthor:hover+.quoteBody {
+    opacity: 1;
+    visibility: visible;
+}
+
+.quoteAuthor {
+    cursor: pointer;
+}
