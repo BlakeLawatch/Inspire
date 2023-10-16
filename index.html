@@ -72,7 +72,9 @@
         <!-- <div>${this.updatedTime}</div> -->
       </div>
       <div on id="weather" class="col-4 toDoCard justify-content-around align-items-center">
-        <!-- <p>${this.weather}</p> -->
+        <p>${this.main} degrees</p>
+        <!-- <button onchange="app.WeatherController.changeTemp($this.main)"></button> -->
+        <!-- <p role="button" onchange="app.WeatherController.changeTemp($this.main)">In the city of ${this.name}</p> -->
       </div>
 
     </section>

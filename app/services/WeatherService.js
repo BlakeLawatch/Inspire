@@ -14,6 +14,9 @@ class WeatherService {
         console.log('got the weather in the service', res.data);
         // console.log('fahrenheit in the service', fahreheit);
     }
+    changeTemp(event) {
+        throw new Error("Method not implemented.")
+    }
 
 }
 

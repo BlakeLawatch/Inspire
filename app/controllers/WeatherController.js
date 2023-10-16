@@ -31,4 +31,13 @@ export class WeatherController {
             Pop.error(error)
         }
     }
+
+    async changeTemp(event) {
+        try {
+            await weatherService.changeTemp(event)
+        } catch (error) {
+            console.error(error);
+            Pop.error(error)
+        }
+    }
 }

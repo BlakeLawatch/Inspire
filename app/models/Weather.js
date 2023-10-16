@@ -2,7 +2,7 @@ export class Weather {
     constructor(data) {
         this.id = data.id
         this.main = ((data.main.temp - 273.15) * 9 / 5 + 32).toFixed(2) || true
-        // this.mainCelsius = (data.main.temp - 273.15)
+        this.mainCelsius = (data.main.temp - 273.15)
         this.name = data.name
         this.weather = data.weather.description
     }
@@ -12,10 +12,12 @@ export class Weather {
         if (this.main) {
             return `
 
-    <p>${this.main} degrees</p>
+    <p onchange="app.WeatherController.changeTemp($this.main)">${this.main} degrees</p>
     <p>In the city of ${this.name}</p>
     `}
         return `
+    <p>${this.mainCelsius} degrees</p>
+    <p>In the city of ${this.name}</p>
     
         `
 
