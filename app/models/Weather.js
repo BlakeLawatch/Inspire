@@ -1,27 +1,27 @@
 export class Weather {
     constructor(data) {
         this.id = data.id
-        this.main = ((data.main.temp - 273.15) * 9 / 5 + 32).toFixed(2) || true
-        this.mainCelsius = (data.main.temp - 273.15)
+        this.main = ((data.main.temp - 273.15) * 9 / 5 + 32).toFixed(0)
+        this.mainCelsius = (data.main.temp - 273.15).toFixed(0)
         this.name = data.name
         this.weather = data.weather.description
     }
 
-    get weatherTemplate() {
+    get fahrenheitTemplate() {
 
-        if (this.main) {
-            return `
-
-    <p onchange="app.WeatherController.changeTemp($this.main)">${this.main} degrees</p>
-    <p>In the city of ${this.name}</p>
-    `}
         return `
-    <p>${this.mainCelsius} degrees</p>
-    <p>In the city of ${this.name}</p>
-    
-        `
-
+    <p role = "button" onclick="app.WeatherController.showCelsius()">${this.main} degrees Fahrenheit</p>
+    <p>In the city of ${this.name}</p>`
     }
+
+    get CelsiusTemplate() {
+        return `
+
+        <p role="button" onclick="app.WeatherController.showFahrenheit()">${this.mainCelsius} degrees Celsius</p>
+        <p>In the city of ${this.name}</p>
+        `
+    }
+
 
 
 }

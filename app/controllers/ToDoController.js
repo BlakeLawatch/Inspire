@@ -20,8 +20,9 @@ export class ToDoController {
     constructor() {
 
 
-        AppState.on('toDo', _drawMyToDos)
         AppState.on('account', this.getMyToDos)
+        AppState.on('account', this.countDone)
+        AppState.on('toDo', _drawMyToDos)
 
     }
 
@@ -56,9 +57,18 @@ export class ToDoController {
         } catch (error) {
             console.error(error);
             Pop.error(error)
-
         }
     }
 
+    // FIXME add a put request match the onchange in the template
 
+    async countDone(checked) {
+        try {
+
+            await toDoService.countDone(checked)
+        } catch (error) {
+            console.error(error);
+            Pop.error(error)
+        }
+    }
 }

@@ -29,7 +29,7 @@ class ToDoService {
 
     }
 
-    // TODO fix the 404
+
 
     async removeToDo(noteId) {
         try {
@@ -47,6 +47,31 @@ class ToDoService {
         catch (error) {
         }
     }
+
+    async countDone(checked) {
+        try {
+
+            const res = await api.put(`api/todos/${checked}`)
+            AppState.toDo.push(checked)
+            AppState.emit('checked')
+
+
+
+            // const check = AppState.toDo
+            // const index = check.findIndex(note => note.done == checked)
+
+            // if (index == -1) {
+            //     throw new Error('could not find checkbox')
+            // }
+            // check.splice(index, 1)
+            // AppState.emit('check')
+
+        } catch (error) {
+            console.error(error);
+
+        }
+    }
+
 
 }
 

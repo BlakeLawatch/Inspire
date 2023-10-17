@@ -4,23 +4,25 @@ export class ToDo {
     constructor(data) {
         this.id = data.id
         this.description = data.description
+        this.completed = data.completed || false
         this.done = data.done || false
-
 
     }
 
     get toDoTemplate() {
         return `
-        <input ${this.done ? 'checked' : ''} onchange="app.ToDoController.countDone('${this.id}')" type="checkbox">
-        <p>${this.description}</p>
-        <i onclick="app.ToDoController.removeToDo('${this.id}')" type="button" class="mdi mdi-delete-circle"></i>
+        <div class="d-flex">
+            <input ${this.completed ? 'checked' : ''} onchange="app.ToDoController.countDone('${this.completed}')" type="checkbox" />
+            <p class="m-0">${this.description}</p>
+            <i onclick="app.ToDoController.removeToDo('${this.id}')" type="button" class="mdi mdi-delete-circle"></i>
+        </div>
         `
     }
 
 
 }
 
-const house = {
+const toDoModel = {
     "completed": {
         "type": "Boolean",
         "required": true,

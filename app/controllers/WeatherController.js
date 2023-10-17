@@ -10,7 +10,16 @@ function _drawWeather() {
         return
     }
     console.log('draw is working');
-    setHTML('weather', weather.weatherTemplate)
+    setHTML('weather', weather.fahrenheitTemplate)
+}
+
+function _drawCelsius() {
+    const weather = AppState.weather
+    if (weather == null) {
+        return
+    }
+    console.log('celsius is working!');
+    setHTML('weather', weather.CelsiusTemplate)
 }
 
 
@@ -19,8 +28,9 @@ export class WeatherController {
     constructor() {
 
         this.getWeather()
-        AppState.on('account', _drawWeather)
-        AppState.on('account', this.getWeather)
+        AppState.on('weather', _drawWeather)
+        AppState.on('weather', _drawCelsius)
+        // AppState.on('account', this.getWeather)
     }
 
     async getWeather() {
@@ -32,12 +42,13 @@ export class WeatherController {
         }
     }
 
-    async changeTemp(event) {
-        try {
-            await weatherService.changeTemp(event)
-        } catch (error) {
-            console.error(error);
-            Pop.error(error)
-        }
+    showCelsius() {
+        const weather = AppState.weather
+        setHTML('weather', weather?.CelsiusTemplate)
+    }
+
+    showFahrenheit() {
+        const weather = AppState.weather
+        setHTML('weather', weather?.fahrenheitTemplate)
     }
 }
