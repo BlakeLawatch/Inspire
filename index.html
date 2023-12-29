@@ -20,8 +20,7 @@
   <header>
     <nav class="navbar navbar-dark navbar-expand  text-light px-2">
       <a class="navbar-brand" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
+        <img src="assets/img/fancy-I.png" height="60" alt="" loading="lazy">
         <span class="ml-2">Inspire</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -29,10 +28,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <!-- NAVLINKS -->
-          <a href="#/about" class="nav-link">About</a>
-        </div>
+
       </div>
       <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
     </nav>
@@ -43,8 +39,12 @@
     <section class="row d-flex col-6">
       <div class="col-7 flex-end toDoCard ms-3 text-light" id="backImage">
         <div>
+          <div class="d-flex justify-content-center">
+            <p class="fs-4 me-3" id="number"></p>
+            <p class="fs-4">Goals to Complete</p>
+
+          </div>
           <form class="w-100 box-shadow" shadow onsubmit="app.ToDoController.createToDo(event)">
-            <p id="number"></p>
             <input id="add" type="text" name="description" required maxlength="20">
             <button class="btn btn-primary rounded-pill">+</button>
           </form>
@@ -63,19 +63,22 @@
 
   <!-- SECTION -->
   <footer class="container-fluid mb-3 text-light fw-bold">
-    <section class="col-12 d-flex justify-content-around">
-      <div id="quote" class="col-4 toDoCard justify-content-around align-items-center">
+    <section class="row justify-content-around">
+
+      <div id="quote" class="col-3 d-flex fs-3 p-1 col-4 toDoCard justify-content-around align-items-center">
         <!-- <p>${this.quote}</p>
-        <p>${this.author}</p> -->
+          <p>${this.author}</p> -->
       </div>
-      <div id="time" class="col-4 toDoCard justify-content-around align-items-center">
+      <div id="time" class="col-3 d-flex fs-2 col-4 toDoCard justify-content-around align-items-center">
         <!-- <div>${this.updatedTime}</div> -->
       </div>
-      <div on id="weather" class="col-4 toDoCard justify-content-around align-items-center">
+      <div on id="weather" class="col-3 toDoCard justify-content-around align-items-center">
         <p>${this.main} degrees</p>
         <!-- <button onchange="app.WeatherController.changeTemp($this.main)"></button> -->
         <!-- <p role="button" onchange="app.WeatherController.changeTemp($this.main)">In the city of ${this.name}</p> -->
       </div>
+
+
 
     </section>
   </footer>

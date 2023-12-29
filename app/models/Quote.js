@@ -15,7 +15,7 @@ export class Quote {
         <div class="quoteAuthor">
         <p>${this.quote}</p>
         </div>
-        <h3 class="quoteBody">${this.author}</h3>
+        <h3 class="quoteBody p-1">${this.author}</h3>
         `
     }
 

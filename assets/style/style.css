@@ -26,3 +26,7 @@ body {
 .quoteAuthor {
     cursor: pointer;
 }
+
+.text-size {
+    text-size-adjust: auto;
+}

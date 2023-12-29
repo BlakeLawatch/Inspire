@@ -10,15 +10,15 @@ export class Weather {
     get fahrenheitTemplate() {
 
         return `
-    <p role = "button" onclick="app.WeatherController.showCelsius()">${this.main} degrees Fahrenheit</p>
-    <p>In the city of ${this.name}</p>`
+    <p class="fs-3" role = "button" onclick="app.WeatherController.showCelsius()">${this.main} degrees Fahrenheit</p>
+    <p class="fs-3">In the city of ${this.name}</p>`
     }
 
     get CelsiusTemplate() {
         return `
 
-        <p role="button" onclick="app.WeatherController.showFahrenheit()">${this.mainCelsius} degrees Celsius</p>
-        <p>In the city of ${this.name}</p>
+        <p class="fs-3" role="button" onclick="app.WeatherController.showFahrenheit()">${this.mainCelsius} degrees Celsius</p>
+        <p class="fs-3">In the city of ${this.name}</p>
         `
     }
 
